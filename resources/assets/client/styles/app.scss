@@ -1,1 +1,243 @@
 @import "lib/foundation";
+@import "lib/variables";
+
+/*------------------------------------*\
+    #GENERAL SETTINGS
+\*------------------------------------*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 62.5%;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: $font-body;
+	overflow-x: hidden;
+}
+
+body, canvas, section, aside, header, main, footer, video, h1, h2, h3, h4,h5, h6, p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.main-content {
+	min-height: 100vh;
+	height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
+	font-weight: normal;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	margin-top: 0.2rem;
+	margin-bottom: 0.5rem;
+	line-height: 1.4;
+}
+
+p {
+	font-family: inherit;
+	font-weight: normal;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+a {
+	font-family: inherit;
+	font-weight: normal;
+	font-style: normal;
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+
+/*------------------------------------*\
+    #BLOCK
+\*------------------------------------*/
+
+.block {
+	position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0px;
+    padding: 7% 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.block--full-page {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	padding: 0px;
+}
+
+.block__overlay {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255,255,255,0.4);
+}
+
+
+/*------------------------------------*\
+    #MAIN HEADER
+\*------------------------------------*/
+
+.main-header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	min-height: 50px;
+	height: auto;
+	overflow: hidden;
+	padding: 7px 0px;
+	z-index: 1;
+}
+
+.main-header__container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.main-logo {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	padding-top: 15px;
+}
+
+.main-logo img {
+	width: 100%; 
+	height: auto;
+}
+
+.main-navigation {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.main-navigation__list {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+	position: relative;
+}
+
+.main-navigation__item {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	margin-right: 25px;
+}
+
+.main-navigation__item:last-child {
+	margin-right: 0px;
+}
+
+.main-navigation__link {
+	font-size: $mobile-link-font-size;
+	color: $primary-dark-color;
+	text-transform: uppercase;
+	display: inline-block;
+	width: 80px;
+	padding-top: 5px;
+
+	@media only screen and (min-width: 64rem) {
+		font-size: $desktop-link-font-size;
+	}
+}
+
+.main-navigation__link::before {
+	content: '';
+	width: 80px;
+	background-color: $primary-dark-color;
+	height: 2px;
+	margin-top: -5px;
+	position: absolute;
+}
+
+/*------------------------------------*\
+    #HOME PAGE
+\*------------------------------------*/
+
+.home .block--banner {
+	background: url('/client/images/bg-1.jpg')no-repeat center center / cover;
+	
+	@media only screen and (min-width: 64rem) {
+		background-attachment: fixed;
+	}
+}
+
+.block__title {
+	font-family: $font-heading;
+	font-size: $mobile-title-font-size;
+	text-transform: uppercase;
+	color: $primary-dark-color;
+	text-align: center;
+
+	@media only screen and (min-width: 64rem) {
+		font-size: $desktop-title-font-size;
+	}
+}
+
+.block__subtitle {
+	font-size: $mobile-subtitle-font-size;
+	color: $primary-dark-color;
+	text-align: center;
+
+	@media only screen and (min-width: 64rem) {
+		font-size: $desktop-subtitle-font-size;
+	}
+}
+
+.home .block--about {
+	background-color: $primary-dark-color;
+
+	.block__title {
+		font-size: 3rem;
+		color: $secundary-color;
+		
+		@media only screen and (min-width: 64rem) {
+			font-size: 5rem;
+		}
+	}
+
+	.block__subtitle {
+		color: $primary-light-color;
+	}
+}
