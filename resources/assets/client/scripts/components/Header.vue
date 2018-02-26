@@ -1,5 +1,5 @@
 <template>
-	<header class="main-header">
+	<header class="main-header" id="js-main-header">
 		<div class="large-12 large-centered columns">
 			<div class="main-header__container">
 				<div class="main-logo">
@@ -29,22 +29,33 @@
 </template>
 
 <script>
+	import debounce from '../core/debounce';
+
 	export default {
+		props:[],
 
 		data() {
 			return {
-
+				body: document.querySelector('body')
 			}
 		},
 
 		mounted() {
 			let _this = this;
-			_this.init();
+			_this.animateOnScroll();
 		},
 
 		methods: {
 			init() {
-				console.log('hi');
+				
+			},
+			animateOnScroll() {
+				let _this = this;
+				const mainHeader = document.getElementById('js-main-header');
+				window.addEventListener('scroll', debounce(function() {
+					let st = window.pageYOffset || document.documentElement.scrollTop;
+					(st > 1) ? mainHeader.classList.add('is--opaque') : mainHeader.classList.remove('is--opaque');
+				}, 200));
 			}
 		}
 	}

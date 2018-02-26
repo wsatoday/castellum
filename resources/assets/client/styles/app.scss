@@ -1,6 +1,6 @@
 @import "lib/foundation";
 @import "lib/variables";
-
+@import "lib/swiper";
 /*------------------------------------*\
     #GENERAL SETTINGS
 \*------------------------------------*/
@@ -40,21 +40,27 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0.2rem;
 	margin-bottom: 0.5rem;
 	line-height: 1.4;
+	color: $primary-dark-color;
 }
 
 p {
-	font-family: inherit;
+	font-family: $font-body;
 	font-weight: normal;
 	font-style: normal;
 	text-rendering: optimizeLegibility;
 	margin: 0;
 	padding: 0;
-	font-size: 1rem;
+	font-size: $mobile-font-size;
 	line-height: 1.6;
+	color: $primary-dark-color;
+	
+	@media only screen and (min-width: 64rem) {
+		font-size: $desktop-font-size;
+	}
 }
 
 a {
-	font-family: inherit;
+	font-family: $font-body;
 	font-weight: normal;
 	font-style: normal;
 	cursor: pointer;
@@ -64,8 +70,37 @@ a {
 	padding: 0;
 	font-size: 1rem;
 	line-height: 1.6;
+	color: $primary-dark-color;
+	font-size: $mobile-link-font-size;
+
+	@media only screen and (min-width: 64rem) {
+		font-size: $desktop-link-font-size;
+	}
+
 }
 
+a:hover,
+a:active,
+a:focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+.no-padding-top {
+	padding-top: 0px !important;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0px !important;
+}
+
+.no-padding-left {
+	padding-left: 0px !important;
+}
+
+.no-padding-right {
+	padding-right: 0px !important;
+}
 
 /*------------------------------------*\
     #BLOCK
@@ -105,6 +140,54 @@ a {
 
 
 /*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+.btn {
+	display:block;
+	width: 150px;
+	height: auto;
+	background-color: $secundary-color;
+	color: $primary-light-color;
+	text-transform: uppercase;
+	margin: 0px;
+	margin-top: 15px;
+	padding: 10px 0px;
+	text-align: center;
+	letter-spacing: 1.2px;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:active {
+	color: $primary-light-color;
+	background-color: $secundary-color;
+}
+
+/*------------------------------------*\
+    #PROGRESS BAR
+\*------------------------------------*/
+
+.nprogress-custom-parent {
+	overflow: hidden;
+	position: fixed !important;
+	top: 0px;
+	width: 100%;
+	z-index: 11;
+	height: 3px;
+}
+
+.nprogress-custom-parent #nprogress .bar {
+	height: 3px;
+	background: $secundary-color;
+}
+
+#nprogress .peg {
+	box-shadow: 0 0 10px $secundary-color, 0 0 5px $secundary-color !important;
+}
+
+
+/*------------------------------------*\
     #MAIN HEADER
 \*------------------------------------*/
 
@@ -119,6 +202,16 @@ a {
 	overflow: hidden;
 	padding: 7px 0px;
 	z-index: 1;
+	background-color: $primary-light-color;
+
+	@media only screen and (min-width: 64rem) {
+		background-color: rgba(255,255,255,0);
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+.main-header.is--opaque {
+	background-color: rgba(255,255,255,1);
 }
 
 .main-header__container {
@@ -140,6 +233,10 @@ a {
 .main-logo img {
 	width: 100%; 
 	height: auto;
+
+	@media only screen and (min-width: 64rem) {
+		width: 70px;
+	}
 }
 
 .main-navigation {
@@ -161,8 +258,13 @@ a {
 .main-navigation__item {
 	margin: 0px;
 	padding: 0px;
-	display: inline-block;
-	margin-right: 25px;
+	display: inline;
+	margin-right: 15px;
+
+	@media only screen and (min-width: 64rem) {
+		display: inline-block;
+		margin-right: 25px;
+	}
 }
 
 .main-navigation__item:last-child {
@@ -173,22 +275,152 @@ a {
 	font-size: $mobile-link-font-size;
 	color: $primary-dark-color;
 	text-transform: uppercase;
-	display: inline-block;
-	width: 80px;
-	padding-top: 5px;
+	letter-spacing: 1.2px;
+
+	@media only screen and (min-width: 64rem) {
+		display: inline-block;
+		width: 120px;
+		padding-top: 5px;
+		font-size: $desktop-link-font-size;
+
+		&::before {
+			content: '';
+			width: 100px;
+			background-color: $primary-dark-color;
+			height: 2px;
+			margin-top: -5px;
+			position: absolute;
+		}
+	}
+}
+
+/*------------------------------------*\
+    #MAIN FOOTER
+\*------------------------------------*/
+
+.main-footer {
+	background-color: $primary-dark-color;
+	padding-top: 5%;
+	padding-bottom: 2%;
+}
+
+.copyright {
+	font-size: 1rem;
+	color: $secundary-color;
+}
+
+/*------------------------------------*\
+    #Slider
+\*------------------------------------*/
+
+.swiper-slide {
+	width: 100%;
+	height: 50vh;
+
+	@media only screen and (min-width: 64rem) {
+		width: 50%;
+		height: 70vh;
+	}
+}
+
+.slide__overlay {
+	display: block;
+	width: 100%;
+	height:100%;
+	padding-top: 25px;
+	background-color: rgba(0,0,0,0.5);
+	transition: all 0.3s ease-in-out;
+}
+
+.swiper-slide-active {
+	cursor: pointer !important;
+}
+
+.swiper-slide-active .slide__overlay {
+	background-color: rgba(0,0,0,0);
+
+}
+.slide__title {
+	font-family: $font-body;
+	color: $primary-light-color;
+	font-size: $mobile-font-size;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+
+	@media only screen and (min-width: 64rem) {
+		font-size: $desktop-font-size;
+	}
+}
+
+.slide__meta {
+	font-size: $mobile-link-font-size;
+	color: $primary-light-color;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
 
 	@media only screen and (min-width: 64rem) {
 		font-size: $desktop-link-font-size;
 	}
 }
 
-.main-navigation__link::before {
-	content: '';
-	width: 80px;
-	background-color: $primary-dark-color;
-	height: 2px;
-	margin-top: -5px;
+.plus {
 	position: absolute;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	background-color: $secundary-color;
+	color: $primary-light-color;
+	z-index: 1;
+	left: 0px;
+	right: 0px;
+	margin: 0 auto;
+	margin-top: 25%;
+	transform: translateY(-50%);
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+
+	@media only screen and (min-width: 64rem) {
+		margin-top: 65%;
+	}
+}
+
+.swiper-slide-active .slide__title,
+.swiper-slide-active .slide__meta,
+.swiper-slide-active .plus {
+	opacity: 1;
+}
+
+.slider-btn {
+	display: block;
+	position: absolute;
+}
+
+.slider-btn p {
+	color: $primary-light-color;
+	font-size: $mobile-link-font-size;
+	cursor: pointer;
+	text-transform: uppercase;
+
+	@media only screen and (min-width: 64rem) {
+		font-size: $desktop-link-font-size;
+	}
+}
+
+.slider-btn__icon {
+	padding-left: 25px;
+	
+	@media only screen and (min-width: 64rem) {
+		padding-left: 35px;
+	}
+}
+
+.slider-btn--next {
+	right: 25px;
+	z-index: 1;
 }
 
 /*------------------------------------*\
@@ -201,6 +433,18 @@ a {
 	@media only screen and (min-width: 64rem) {
 		background-attachment: fixed;
 	}
+}
+
+.home .scroll-arrow-arrow {
+	position: absolute;
+    bottom: 25px;
+    cursor: pointer;
+}
+
+.home .arrow-down {
+	fill: $secundary-color;
+	width: 70px;
+	height: 70px;
 }
 
 .block__title {
@@ -239,5 +483,70 @@ a {
 
 	.block__subtitle {
 		color: $primary-light-color;
+		font-size: $mobile-font-size;
+
+		@media only screen and (min-width: 64rem) {
+			font-size: $desktop-font-size;
+		}
 	}
+}
+
+.home .block--projects {
+	@media only screen and (min-width: 64rem) {
+		flex-flow: row nowrap;
+	}
+}
+
+.home .block--projects .block {
+	width: 100%;
+	min-height: 50vh;
+	height: auto;
+
+	@media only screen and (min-width: 64rem) {
+		min-height: 70vh;
+		width: 50%;
+	}
+}
+
+.home  .block--projects__content {
+	background-color: $primary-light-color;
+}
+
+.content__title {
+	width: 90%;
+	font-family: $font-body;
+	font-size: $mobile-font-size;
+	text-align: center;
+
+	.btn {
+		margin: 15px auto 0px auto;
+	}
+
+	@media only screen and (min-width: 64rem) {
+		width: 50%;
+		text-align: left;
+		font-size: $desktop-font-size;
+
+		.btn {
+			margin: 15px 0px 0px 0px;
+		}
+	}
+}
+
+.content__title > span::after {
+	content: '';
+	width: 100px;
+	background-color: $primary-dark-color;
+	height: 2px;
+	margin: 15px auto;
+	display: block;
+	position: relative;
+
+	@media only screen and (min-width: 64rem) {
+		margin: 15px 0px 15px 0px;
+	}
+}
+
+.home .block--projects__slider {
+	background-color: $secundary-color;
 }

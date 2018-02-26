@@ -1,6 +1,6 @@
 <template>
-	<footer class="main-footer">
-		footer
+	<footer class="block main-footer">
+		<p class="copyright">Castellum &copy; 2018. All rights reserved.</p>
 	</footer>
 </template>
 

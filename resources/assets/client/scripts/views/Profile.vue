@@ -20,7 +20,10 @@
 
 		methods: {
 			init() {
-				console.log('hi profile');
+				let _this = this;
+				//Event.$on('routerToggle', setTimeout(function()  {
+					_this.$nprogress.done();
+				//}, 1000));
 			}
 		}
 	}
