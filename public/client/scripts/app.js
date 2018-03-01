@@ -26072,21 +26072,17 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(68)
-}
 var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(70)
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(82)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-62187bd8"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -26119,54 +26115,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(69);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(13)("2bdf3b3e", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62187bd8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contact.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62187bd8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contact.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 68 */,
+/* 69 */,
 /* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -26313,75 +26268,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "contact" }, [
-      _c("div", { staticClass: "map", attrs: { id: "js-map" } }),
-      _vm._v(" "),
-      _c("section", { staticClass: "block block--contacts" }, [
-        _c("div", { staticClass: "contact__info" }, [
-          _c("h2", { staticClass: "block__title" }, [_vm._v("New Business")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [_vm._v("Marcos Correia")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [_vm._v("Director Geral")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [
-            _vm._v("m: 351 917 857 480")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [_vm._v("mc@castellum.pt")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "contact__info" }, [
-          _c("h2", { staticClass: "block__title" }, [
-            _vm._v("General Enquires")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [
-            _vm._v("t: 351 917 857 480")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [
-            _vm._v("geral@castellum.pt")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "contact__info" }, [
-          _c("h2", { staticClass: "block__title" }, [_vm._v("Visit")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [
-            _vm._v("Alameda da Música 29b")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "block__desc" }, [_vm._v("1750-044 Lisboa")])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-62187bd8", module.exports)
-  }
-}
-
-/***/ }),
+/* 71 */,
 /* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26977,6 +26864,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -27085,14 +26991,14 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "project-description" }, [
+        _c("div", { staticClass: "project-description--desktop" }, [
           _c("p", {
             staticClass: "block__description",
             domProps: { textContent: _vm._s(_vm.item.content) }
           })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "project-tecnical" }, [
+        _c("div", { staticClass: "project-tecnical--desktop" }, [
           _c(
             "p",
             { staticClass: "block__description block__description--title" },
@@ -27112,7 +27018,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "project-intervention" }, [
+        _c("div", { staticClass: "project-intervention--desktop" }, [
           _c(
             "p",
             { staticClass: "block__description block__description--title" },
@@ -27130,6 +27036,51 @@ var render = function() {
       "section",
       { staticClass: "block project-gallery" },
       [
+        _c("div", { staticClass: "project-description--mobile" }, [
+          _c("div", { staticClass: "small-10 small-centered columns" }, [
+            _c("p", {
+              staticClass: "block__description",
+              domProps: { textContent: _vm._s(_vm.item.content) }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "project-tecnical--mobile" }, [
+          _c("div", { staticClass: "small-10 small-centered columns" }, [
+            _c(
+              "p",
+              { staticClass: "block__description block__description--title" },
+              [_vm._v("Dados Técnicos:")]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "block__description" }, [
+              _vm._v("Área: " + _vm._s(_vm.item.area))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "block__description" }, [
+              _vm._v("Cliente: " + _vm._s(_vm.item.cliente))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "block__description" }, [
+              _vm._v("Fase: " + _vm._s(_vm.item.fase))
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "project-intervention--mobile" }, [
+          _c("div", { staticClass: "small-10 small-centered columns" }, [
+            _c(
+              "p",
+              { staticClass: "block__description block__description--title" },
+              [_vm._v("Áreas de Intervenção:")]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "block__description" }, [
+              _vm._v(_vm._s(_vm.item.area_intervencao))
+            ])
+          ])
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "project-headline" }, [
           _c(
             "div",
@@ -27304,6 +27255,88 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "contact" }, [
+      _c("div", { staticClass: "map", attrs: { id: "js-map" } }),
+      _vm._v(" "),
+      _c("section", { staticClass: "block block--contacts" }, [
+        _c("div", { staticClass: "contact__info" }, [
+          _c("h2", { staticClass: "block__title" }, [_vm._v("New Business")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [_vm._v("Marcos Correia")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [_vm._v("Director Geral")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [
+            _c("a", { attrs: { href: "tel:351917857480" } }, [
+              _vm._v("m: 351 917 857 480")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [
+            _c("a", { attrs: { href: "mailto:mc@castellum.pt" } }, [
+              _vm._v("mc@castellum.pt")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "contact__info" }, [
+          _c("h2", { staticClass: "block__title" }, [
+            _vm._v("General Enquires")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [
+            _c("a", { attrs: { href: "tel:351917857480" } }, [
+              _vm._v("t: 351 917 857 480")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [
+            _c("a", { attrs: { href: "mailto:mc@castellum.pt" } }, [
+              _vm._v("geral@castellum.pt")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "contact__info" }, [
+          _c("h2", { staticClass: "block__title" }, [_vm._v("Visit")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [
+            _vm._v("Alameda da Música 29b")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "block__desc" }, [_vm._v("1750-044 Lisboa")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-62187bd8", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

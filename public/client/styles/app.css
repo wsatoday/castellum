@@ -6380,11 +6380,15 @@ a:focus {
     display: inline-block;
     margin-right: 25px;
   }
+
+  .main-navigation__item:last-child {
+    margin-right: 0px;
+  }
 }
 
-.main-navigation__item:last-child {
-  margin-right: 0px;
-}
+/*.main-navigation__item:last-child {
+	margin-right: 0px;
+}*/
 
 .main-navigation__link {
   font-size: 1rem;
@@ -6745,7 +6749,7 @@ a:focus {
 .home .block--about .block__subtitle {
   color: white;
   font-size: 1.4rem;
-  margin: 15px 0px 25px 0px;
+  margin: 15px 0px 15px 0px;
 }
 
 @media only screen and (min-width: 64rem) {
@@ -7110,7 +7114,8 @@ a:focus {
   position: relative;
 }
 
-.contact__info .block__desc {
+.contact__info .block__desc,
+.contact__info .block__desc a {
   color: #07223a;
   font-size: 1.4rem;
   text-align: left;
@@ -7128,8 +7133,13 @@ a:focus {
     font-size: 2rem;
   }
 
-  .contact__info .block__desc {
+  .contact__info .block__desc,
+  .contact__info .block__desc a {
     font-size: 1.6rem;
+  }
+
+  .contact__info .block__desc a:hover {
+    color: #d8b47a;
   }
 }
 
@@ -7418,9 +7428,8 @@ a:focus {
 }
 
 .project-page .block--banner .block__overlay {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -7435,7 +7444,57 @@ a:focus {
   }
 }
 
-.project-page .project-description {
+.project-page .project-description--mobile,
+.project-page .project-tecnical--mobile,
+.project-page .project-intervention--mobile {
+  display: block;
+  width: 100%;
+  position: relative;
+  min-height: 25vh;
+  height: auto;
+  overflow: hidden;
+  padding: 25px 0px;
+  margin: 0px;
+  background-color: #07223a;
+}
+
+.project-page .project-description--mobile .block__description,
+.project-page .project-tecnical--mobile .block__description,
+.project-page .project-intervention--mobile .block__description {
+  text-align: left;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.project-page .project-description--mobile .block__description--title,
+.project-page .project-tecnical--mobile .block__description--title,
+.project-page .project-intervention--mobile .block__description--title {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.project-page .project-description--mobile {
+  background-color: white;
+}
+
+.project-page .project-description--mobile .block__description {
+  color: #07223a;
+}
+
+.project-page .project-tecnical--mobile .block__description,
+.project-page .project-intervention--mobile .block__description {
+  margin-top: 7px;
+}
+
+@media only screen and (min-width: 64rem) {
+  .project-page .project-description--mobile,
+  .project-page .project-tecnical--mobile,
+  .project-page .project-intervention--mobile {
+    display: none;
+  }
+}
+
+.project-page .project-description--desktop {
   position: absolute;
   width: 80%;
   height: 25vh;
@@ -7446,9 +7505,7 @@ a:focus {
   overflow-y: auto;
   background-color: white;
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -7458,7 +7515,7 @@ a:focus {
           justify-content: flex-start;
 }
 
-.project-page .project-description .block__description {
+.project-page .project-description--desktop .block__description {
   text-align: left;
   color: #07223a;
   font-size: 1.4rem;
@@ -7466,19 +7523,22 @@ a:focus {
 }
 
 @media only screen and (min-width: 64rem) {
-  .project-page .project-description {
+  .project-page .project-description--desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     height: 30vh;
     width: 30%;
     left: 20%;
     bottom: 5vh;
   }
 
-  .project-page .project-description .block__description {
+  .project-page .project-description--desktop .block__description {
     font-size: 1.4rem;
   }
 }
 
-.project-tecnical {
+.project-tecnical--desktop {
   position: absolute;
   width: 80%;
   height: 25vh;
@@ -7489,9 +7549,7 @@ a:focus {
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -7501,7 +7559,7 @@ a:focus {
           justify-content: flex-start;
 }
 
-.project-tecnical .block__description {
+.project-tecnical--desktop .block__description {
   text-align: left;
   color: white;
   font-size: 1.4rem;
@@ -7510,26 +7568,29 @@ a:focus {
   margin-top: 7px;
 }
 
-.project-tecnical .block__description--title {
+.project-tecnical--desktop .block__description--title {
   text-transform: uppercase;
   margin-top: 1.6rem;
   margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 64rem) {
-  .project-tecnical {
+  .project-tecnical--desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     height: 30vh;
     width: 25%;
     left: 50%;
     bottom: 5vh;
   }
 
-  .project-tecnical .block__description {
+  .project-tecnical--desktop .block__description {
     font-size: 1.4rem;
   }
 }
 
-.project-intervention {
+.project-intervention--desktop {
   position: absolute;
   width: 80%;
   height: 13vh;
@@ -7540,9 +7601,7 @@ a:focus {
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -7552,7 +7611,7 @@ a:focus {
           justify-content: flex-start;
 }
 
-.project-intervention .block__description {
+.project-intervention--desktop .block__description {
   text-align: left;
   color: white;
   font-size: 1.4rem;
@@ -7561,21 +7620,24 @@ a:focus {
   margin-top: 7px;
 }
 
-.project-intervention .block__description--title {
+.project-intervention--desktop .block__description--title {
   text-transform: uppercase;
   margin-top: 1.6rem;
   margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 64rem) {
-  .project-intervention {
+  .project-intervention--desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     height: 30vh;
     width: 20%;
     left: 75%;
     bottom: 5vh;
   }
 
-  .project-intervention .block__description {
+  .project-intervention--desktop .block__description {
     font-size: 1.4rem;
   }
 }
@@ -7584,7 +7646,7 @@ a:focus {
   position: relative;
   width: 100%;
   height: auto;
-  margin-top: 10vh;
+  margin: 0px;
   padding: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7598,12 +7660,6 @@ a:focus {
           align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-
-@media only screen and (min-width: 64rem) {
-  .project-page .title-wrapper {
-    margin-top: 0px;
-  }
 }
 
 .project-page .block__title {

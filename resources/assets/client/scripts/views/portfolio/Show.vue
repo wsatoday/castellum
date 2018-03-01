@@ -9,21 +9,40 @@
 					</div>
 				</div>
 			</div>
-			<div class="project-description">
+			<div class="project-description--desktop">
 				<p class="block__description" v-text="item.content"></p>
 			</div>
-			<div class="project-tecnical">
+			<div class="project-tecnical--desktop">
 				<p class="block__description block__description--title">Dados Técnicos</p>
 				<p class="block__description">Área: {{ item.area }}</p>
 				<p class="block__description">Cliente: {{ item.cliente }}</p>
 				<p class="block__description">Fase: {{ item.fase }}</p>
 			</div>
-			<div class="project-intervention">
+			<div class="project-intervention--desktop">
 				<p class="block__description block__description--title">Áreas de Intervenção</p>
 				<p class="block__description">{{ item.area_intervencao }}</p>
 			</div>
 		</section>
 		<section class="block project-gallery">
+			<div class="project-description--mobile">
+				<div class="small-10 small-centered columns">
+					<p class="block__description" v-text="item.content"></p>
+				</div>
+			</div>
+			<div class="project-tecnical--mobile">
+				<div class="small-10 small-centered columns">
+					<p class="block__description block__description--title">Dados Técnicos:</p>
+					<p class="block__description">Área: {{ item.area }}</p>
+					<p class="block__description">Cliente: {{ item.cliente }}</p>
+					<p class="block__description">Fase: {{ item.fase }}</p>
+				</div>
+			</div>
+			<div class="project-intervention--mobile">
+				<div class="small-10 small-centered columns">
+					<p class="block__description block__description--title">Áreas de Intervenção:</p>
+					<p class="block__description">{{ item.area_intervencao }}</p>
+				</div>
+			</div>
 			<div class="project-headline">
 				<div class="small-10 small-centered medium-6 medium-centered columns">
 					<div class="subtitle-wrapper">

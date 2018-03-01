@@ -345,12 +345,17 @@ a:focus {
 	@media only screen and (min-width: 64rem) {
 		display: inline-block;
 		margin-right: 25px;
+
+		&:last-child {
+			margin-right: 0px;
+		}
 	}
 }
 
-.main-navigation__item:last-child {
+
+/*.main-navigation__item:last-child {
 	margin-right: 0px;
-}
+}*/
 
 .main-navigation__link {
 	font-size: $mobile-link-font-size;
@@ -661,7 +666,7 @@ a:focus {
 	.block__subtitle {
 		color: $primary-light-color;
 		font-size: $mobile-font-size;
-		margin: 15px 0px 25px 0px;
+		margin: 15px 0px 15px 0px;
 
 		@media only screen and (min-width: 64rem) {
 			font-size: $desktop-font-size;
@@ -980,7 +985,8 @@ a:focus {
 		position: relative;
 	}
 
-	.block__desc {
+	.block__desc,
+	.block__desc a {
 		color: $primary-dark-color;
 		font-size: $mobile-font-size;
 		text-align: left;
@@ -996,8 +1002,13 @@ a:focus {
 			font-size: $desktop-subtitle-font-size;
 		}
 
-		.block__desc {
+		.block__desc,
+		.block__desc a {
 			font-size: $desktop-font-size;
+		}
+
+		.block__desc a:hover {
+			color: $secundary-color;
 		}
 	}
 
@@ -1256,7 +1267,7 @@ a:focus {
 	background-position: center center;
 
 	.block__overlay {
-		justify-content: flex-start;
+		justify-content: space-around;
 
 		background-color: rgba(0,0,0,0.5);
 	}
@@ -1270,7 +1281,56 @@ a:focus {
 	}
 }
 
-.project-page .project-description {
+.project-page .project-description--mobile,
+.project-page .project-tecnical--mobile,
+.project-page .project-intervention--mobile {
+	display: block;
+	width: 100%;
+	position: relative;
+	min-height: 25vh;
+	height: auto;
+	overflow: hidden;
+	padding: 25px 0px;
+	margin: 0px;
+	background-color: $primary-dark-color;
+
+	.block__description {
+		text-align: left;
+		color: $primary-light-color;
+		font-size: $mobile-font-size;
+	}
+
+	.block__description--title {
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+}
+
+.project-page .project-description--mobile {
+	background-color: $primary-light-color;
+
+	.block__description {
+		color: $primary-dark-color;
+	}
+}
+
+.project-page .project-tecnical--mobile,
+.project-page .project-intervention--mobile {
+
+	.block__description {
+		margin-top: 7px;
+	}
+}
+
+@media only screen and (min-width: 64rem) {
+	.project-page .project-description--mobile,
+	.project-page .project-tecnical--mobile,
+	.project-page .project-intervention--mobile {
+		display: none;
+	}
+}
+
+.project-page .project-description--desktop {
 	position: absolute;
 	width: 80%;
 	height: 25vh;
@@ -1281,7 +1341,7 @@ a:focus {
 	overflow-y: auto;
 	background-color: $primary-light-color;
 	z-index: 1;
-	display: flex;
+	display: none;
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 
@@ -1293,6 +1353,7 @@ a:focus {
 	}
 
 	@media only screen and (min-width: 64rem) {
+		display: flex;
 		height: 30vh;
 		width: 30%;
 		left: 20%;
@@ -1304,7 +1365,7 @@ a:focus {
 	}
 }
 
-.project-tecnical {
+.project-tecnical--desktop {
 	position: absolute;
 	width: 80%;
 	height: 25vh;
@@ -1315,7 +1376,7 @@ a:focus {
 	overflow-y: auto;
 	background-color: rgba(0,0,0,0.7);
 	z-index: 1;
-	display: flex;
+	display: none;
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 
@@ -1335,6 +1396,7 @@ a:focus {
 	}
 
 	@media only screen and (min-width: 64rem) {
+		display: flex;
 		height: 30vh;
 		width: 25%;
 		left: 50%;
@@ -1346,7 +1408,7 @@ a:focus {
 	}
 }
 
-.project-intervention {
+.project-intervention--desktop {
 	position: absolute;
 	width: 80%;
 	height: 13vh;
@@ -1357,7 +1419,7 @@ a:focus {
 	overflow-y: auto;
 	background-color: rgba(0,0,0,0.3);
 	z-index: 1;
-	display: flex;
+	display: none;
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 
@@ -1377,6 +1439,7 @@ a:focus {
 	}
 
 	@media only screen and (min-width: 64rem) {
+		display: flex;
 		height: 30vh;
 		width: 20%;
 		left: 75%;
@@ -1392,7 +1455,7 @@ a:focus {
 	position: relative;
 	width: 100%;
 	height: auto;
-	margin-top: 10vh;
+	margin: 0px;
 	padding: 0px;
 	display: flex;
 	flex-flow: column nowrap;
@@ -1400,7 +1463,6 @@ a:focus {
 	justify-content: space-around;
 
 	@media only screen and (min-width: 64rem) {
-		margin-top: 0px;
 	}
 }
 

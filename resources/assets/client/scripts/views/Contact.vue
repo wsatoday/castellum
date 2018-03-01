@@ -6,13 +6,13 @@
 				<h2 class="block__title">New Business</h2>
 				<p class="block__desc">Marcos Correia</p>
 				<p class="block__desc">Director Geral</p>
-				<p class="block__desc">m: 351 917 857 480</p>
-				<p class="block__desc">mc@castellum.pt</p>
+				<p class="block__desc"><a href="tel:351917857480">m: 351 917 857 480</a></p>
+				<p class="block__desc"><a href="mailto:mc@castellum.pt">mc@castellum.pt</a></p>
 			</div>
 			<div class="contact__info">
 				<h2 class="block__title">General Enquires</h2>
-				<p class="block__desc">t: 351 917 857 480</p>
-				<p class="block__desc">geral@castellum.pt</p>
+				<p class="block__desc"><a href="tel:351917857480">t: 351 917 857 480</a></p>
+				<p class="block__desc"><a href="mailto:mc@castellum.pt">geral@castellum.pt</a></p>
 			</div>
 			<div class="contact__info">
 				<h2 class="block__title">Visit</h2>
@@ -22,9 +22,6 @@
 		</section>
 	</div>
 </template>
-<style scoped>
-	
-</style>
 <script>
 	export default {
 		data() {
