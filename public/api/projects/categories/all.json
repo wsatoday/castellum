@@ -1,0 +1,135 @@
+
+[
+	{
+		"id": 1,
+		"position": null,
+		"status": "active",
+		"lang": "pt",
+		"title": "Projecto 1",
+		"content": null,
+		"resume": null,
+		"meta": "Lisboa, Portugal",
+		"cover_photo": "bg-3.jpg",
+		"slug": "projecto-1",
+		"created_at": "2018-02-28 10:16:10",
+		"updated_at": "2018-02-28 10:16:10",
+		"categories": [
+			{
+				"id": 1,
+				"position": null,
+				"status": "active",
+				"lang": "pt",
+				"title": "todos",
+				"content": null,
+				"resume": null,
+				"cover_photo": null,
+				"slug": "todos",
+				"created_at": "2018-02-28 10:16:10",
+				"updated_at": "2018-02-28 10:16:10",
+				"pivot": {
+					"project_id": 1,
+					"category_id": 1
+				}
+			}
+		]
+	},
+	{
+		"id": 2,
+		"position": null,
+		"status": "active",
+		"lang": "pt",
+		"title": "Projecto 2",
+		"content": null,
+		"resume": null,
+		"meta": "Porto, Portugal",
+		"cover_photo": "bg-1.jpg",
+		"slug": "projecto-2",
+		"created_at": "2018-02-28 10:16:10",
+		"updated_at": "2018-02-28 10:16:10",
+		"categories": [
+			{
+				"id": 1,
+				"position": null,
+				"status": "active",
+				"lang": "pt",
+				"title": "todos",
+				"content": null,
+				"resume": null,
+				"cover_photo": null,
+				"slug": "todos",
+				"created_at": "2018-02-28 10:16:10",
+				"updated_at": "2018-02-28 10:16:10",
+				"pivot": {
+					"project_id": 2,
+					"category_id": 1
+				}
+			}
+		]
+	},
+	{
+		"id": 3,
+		"position": null,
+		"status": "active",
+		"lang": "pt",
+		"title": "Projecto 3",
+		"content": null,
+		"resume": null,
+		"meta": "Lisboa, Portugal",
+		"cover_photo": "bg-3.jpg",
+		"slug": "projecto-3",
+		"created_at": "2018-02-28 10:16:10",
+		"updated_at": "2018-02-28 10:16:10",
+		"categories": [
+			{
+				"id": 1,
+				"position": null,
+				"status": "active",
+				"lang": "pt",
+				"title": "todos",
+				"content": null,
+				"resume": null,
+				"cover_photo": null,
+				"slug": "todos",
+				"created_at": "2018-02-28 10:16:10",
+				"updated_at": "2018-02-28 10:16:10",
+				"pivot": {
+					"project_id": 3,
+					"category_id": 1
+				}
+			}
+		]
+	},
+	{
+		"id": 4,
+		"position": null,
+		"status": "active",
+		"lang": "pt",
+		"title": "Projecto 4",
+		"content": null,
+		"resume": null,
+		"meta": "Algarve, Portugal",
+		"cover_photo": "bg-1.jpg",
+		"slug": "projecto-4",
+		"created_at": "2018-02-28 10:16:10",
+		"updated_at": "2018-02-28 10:16:10",
+		"categories": [
+			{
+				"id": 1,
+				"position": null,
+				"status": "active",
+				"lang": "pt",
+				"title": "todos",
+				"content": null,
+				"resume": null,
+				"cover_photo": null,
+				"slug": "todos",
+				"created_at": "2018-02-28 10:16:10",
+				"updated_at": "2018-02-28 10:16:10",
+				"pivot": {
+					"project_id": 4,
+					"category_id": 1
+				}
+			}
+		]
+	}
+]

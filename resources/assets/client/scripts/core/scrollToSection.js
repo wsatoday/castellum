@@ -11,7 +11,7 @@ const scrollToSection = (el, header) => {
   anime({
     targets: scroll,
     y: ((top + window.pageYOffset) - mainHeaderHeight),
-    duration: 550,
+    duration: 1000,
     easing: 'easeInOutExpo',
     update: () => window.scroll(0, scroll.y)
   })

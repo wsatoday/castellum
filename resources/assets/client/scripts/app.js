@@ -1,10 +1,16 @@
+import anime from 'animejs';
+
 import Vue from 'vue';
 
 import VueRouter from 'vue-router';
 
+import axios from 'axios';
+
 import NProgress from 'vue-nprogress';
 
 window.Event = new Vue();
+
+window.axios = axios;
 
 Vue.use(VueRouter);
 
@@ -19,11 +25,39 @@ const nprogress = new NProgress({ parent: '.nprogress-container' });
 const routes = [
 	{
 		path: '/',
-		component: require('./views/Home')
+		component: require('./views/Home'),
+		meta: {
+			keepAlive: true
+		} 
 	},
 	{
 		path: '/perfil',
-		component: require('./views/Profile')
+		component: require('./views/Profile'),
+		meta: {
+			keepAlive: true
+		} 
+	},
+	{
+		path: '/contactos',
+		component: require('./views/Contact'),
+		meta: {
+			keepAlive: true
+		} 
+	},
+	{
+		path: '/portfolio',
+		component: require('./views/portfolio/Index'),
+		meta: {
+			keepAlive: false
+		} 
+	},
+	{
+		path: '/portfolio/:category/:slug',
+		component: require('./views/portfolio/Show'),
+		props:true,
+		meta: {
+			keepAlive: false
+		},
 	}
 ];
 
@@ -35,7 +69,7 @@ const router = new VueRouter({
 	  	if (savedPosition) {
 		    	return savedPosition
 	  	} else {
-	    	return { x: 0, y: 0 }
+	  		return { x: 0, y: 0 }
 	  	}
 	},
 
@@ -45,8 +79,35 @@ const router = new VueRouter({
 });
 
 
+router.beforeEach((to, from, next) => {
+	let loader = document.getElementById('js-loader');
+	loader.style.opacity = 1;
+	loader.classList.remove('is--hidden');
+	loader.classList.add('is--visible');
+
+	setTimeout(() => {
+		next();
+	}, 200);
+});
 router.afterEach((to, from) => {
-  Event.$emit('routerToggle');
+ 	Event.$emit('routerToggle');
+ 	let loader = document.getElementById('js-loader');
+ 	let timer = (loader.classList.contains('is--dark')) ? 1500 : 400;
+ 	setTimeout(() => {
+		let animLoader = anime({
+			targets: loader,
+   			opacity: 0,
+   			duration: 1000,
+   			easing: 'linear'
+		});
+		animLoader.complete = function() {
+			loader.classList.remove('is--visible');
+			loader.classList.add('is--hidden');
+			if (loader.classList.contains('is--dark')) {
+				loader.classList.remove('is--dark');
+			}
+		};
+ 	}, timer)
 });
 
 
