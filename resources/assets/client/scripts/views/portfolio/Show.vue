@@ -1,6 +1,6 @@
 <template>
 	<div class="project-page">
-		<section class="block block--full-page block--banner" :style="'background-image:url(/client/images/'+ item.cover_photo + ')'">
+		<section class="block block--full-page block--banner" :style="'background-image:url(/uploads/images/projects/'+ item.cover_photo + ')'">
 			<div class="block__overlay">
 				<div class="small-10 small-centered medium-10 medium-centered columns">
 					<div class="title-wrapper">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="project-thumb" v-for="(thumb, index) in thumbs" :key="thumb.id" :style="'background:url(/client/images/'+ thumb.url + ')no-repeat center center / cover'">
+			<div class="project-thumb" v-for="(thumb, index) in thumbs" :key="thumb.id" :style="'background:url(/uploads/images/projects/'+ thumb.title + ')no-repeat center center / cover'">
 				<div class="project-thumb__overlay"></div>
 			</div>
 		</section>
@@ -59,7 +59,7 @@
 		</div>
 		<div class="block no-padding-top no-padding-bottom block--related-projects__slider" id="js-related-projects__slider">
 		    <div class="swiper-wrapper">
-		        <router-link class="swiper-slide slide-1" v-for="(relatedItem, index) in relatedItems" :key="relatedItem.id" v-if="relatedItem.id !== item.id" :style="'background:url(/client/images/'+ relatedItem.cover_photo + ')no-repeat center center / cover'" exact :to="'/portfolio/' + category + '/' + relatedItem.slug">
+		        <router-link class="swiper-slide slide-1" v-for="(relatedItem, index) in relatedItems" :key="relatedItem.id" v-if="relatedItem.id !== item.id" :style="'background:url(/uploads/images/projects/'+ relatedItem.cover_photo + ')no-repeat center center / cover'" exact :to="'/portfolio/' + category + '/' + relatedItem.slug">
 		        	<div class="slide__overlay">
 		        		<div class="small-12 small-centered large-10 large-centered columns">
 		        			<h3 class="slide__title" v-text="relatedItem.title"></h3>
@@ -99,6 +99,11 @@
 				relatedItems: []
 			}
 		},
+		metaInfo () {
+			return {
+				title: this.item.title + ' | Castellum - Asset Management, Engineering &amp; Consulting.'
+			}
+		},
 		mounted() {
 			let _this = this;
 			_this.fetchData();
@@ -114,10 +119,10 @@
 				let _this = this;
 				_this.item = {};
 				_this.thumbs = [];
-				axios.get('/api/projects/' + _this.$route.params.slug + '.json').then((response) => {
+				axios.get('/api/projects/' + _this.$route.params.slug).then((response) => {
 					_this.item = response.data;
-					for(var i = 0; i < response.data.thumbs.length; i++) {
-			  			_this.thumbs.push(response.data.thumbs[i]);
+					for(var i = 0; i < response.data.photos.length; i++) {
+			  			_this.thumbs.push(response.data.photos[i]);
 			  		}
 				}).catch(function(error) {
 					console.log(error);
@@ -127,7 +132,7 @@
 				let _this = this;
 				console.log(_this.$route.params.category);
 				_this.relatedItems = [];
-				axios.get('/api/projects/categories/' + _this.$route.params.category + '.json').then((response) => {
+				axios.get('/api/projects/categories/' + _this.$route.params.category).then((response) => {
 					for(var i = 0; i < response.data.length; i++) {
 			  			_this.relatedItems.push(response.data[i]);
 			  		}

@@ -1,0 +1,140 @@
+/*
+ * Forms Module
+ */
+
+/*------------------------------------*\
+    Signup / Login Page
+\*------------------------------------*/
+.page-signup{background:url('../../images/bg-cover-home.jpg')no-repeat center center;background-size:cover;height: 100vh;}
+.page-signup .page-full__overlay {background:rgba(0,0,0,0.1);height: 100vh;}
+.page-signup .page-content {/*background:url(../images/home/home_bg.jpg)no-repeat center center;background-size:cover;*/}
+.page-signup .page-content .page-overlay {display:none;position:absolute;width:100%;height:100%;padding:0px;margin:0px;background:rgba(34,45,51,0.9);}
+.page-signup .form-card-wrapper {display:block;position:relative;height:auto;overflow:hidden;padding:120px 0px;}
+.page-signup .form-card {display:block;position:relative;height:auto;overflow:hidden;border-radius:5px;-webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);padding-bottom:25px;margin-bottom:25px;}
+.page-signup .form-card-header {padding:25px 0px;}
+.page-signup .signup-form-title {font-size:1.2rem;}
+.page-signup .arrow-down {width: 0;height: 0;margin-left:auto;margin-right:auto;margin-bottom:25px;border-top: 10px solid rgba(51,62,71,1);border-right: 10px solid transparent;border-left: 10px solid transparent;}
+.page-signup form input {background:rgba(255,255,255,1);border-radius:3px;font-weight:400;font-size:0.9rem;text-align:left;letter-spacing:1.1px;color:rgba(51,62,71,1);-webkit-transition:all .3s linear ease-in-out;-moz-transition:all .3s linear ease-in-out;-ms-transition:all .3s linear ease-in-out;transition:all .3s linear ease-in-out;outline:0;-webkit-box-shadow:none;-moz-box-shadow:none;-ms-box-shadow:none;box-shadow:none}
+form .form-group label {font-size:.8rem;color:rgba(150,155,158,1);display:inline-block;width:auto;margin-right:5px;}
+.page-signup form .form-group input::-webkit-input-placeholder, 
+.page-signup form .form-group textarea::-webkit-input-placeholder {color:rgba(170,170,170,1);font-style:normal;font-size:0.85rem;text-align:left;letter-spacing:1.1px;font-weight:300}
+.page-signup form .form-group input:-moz-placeholder,
+.page-signup form .form-group textarea:-moz-placeholder{color:rgba(51,62,71,1);font-size:0.9rem;font-style:normal;text-align:left;letter-spacing:1.1px;font-weight:400}
+.page-signup form .form-group input::-moz-placeholder,
+.page-signup form .form-group textarea::-moz-placeholder{color:rgba(51,62,71,1);font-size:0.9rem;font-style:normal;text-align:left;letter-spacing:1.1px;font-weight:400}
+.page-signup form .form-group input:-ms-input-placeholder
+.page-signup form .form-group textarea:-ms-input-placeholder{color:rgba(51,62,71,1);font-size:0.9rem;font-style:normal;text-align:left;letter-spacing:1.1px;font-weight:400}
+.page-signup form .form-group input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px rgba(255,255,255,1) inset}
+.page-signup form .form-group select::-webkit-select-placeholder{color:rgba(220,220,220,1);font-style:normal;font-size:1rem;text-align:left;letter-spacing:1.1px;font-weight:300}
+.page-signup form .form-group select:-moz-placeholder{color:rgba(220,220,220,1);font-size:1rem;font-style:normal;text-align:left;letter-spacing:1.1px;font-weight:300}
+.page-signup form .form-group select::-moz-placeholder{color:rgba(220,220,220,1);font-size:1rem;font-style:normal;text-align:left;letter-spacing:1.1px;font-weight:300}
+.page-signup form .form-group select:-ms-select-placeholder{color:rgba(241,99,68,1);font-size:1rem;font-style:normal;text-align:left;letter-spacing:1.1px;font-weight:300}
+.page-signup form .form-group select:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px rgba(255,255,255,1) inset}
+/** submit btn */
+.page-signup form .submit-btn-wrapper {}
+.page-signup form input.submit {-ms-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}
+.page-signup form input.submit, .page-signup  form input.submit:focus{margin-bottom:10px;/*background-color:rgba(241,99,68,1);*/background-color:rgba(51,62,71,1);color:rgba(255,255,255,1);display:inline-block;width:100%;padding:15px 15px;margin-top:0px;border:none;border-radius:5px;border-bottom:3px solid rgba(40,40,40,1);font-size: 0.9rem;text-align:center;}
+.page-signup form input.submit:hover{/*background-color:rgba(245,80,45,1);*/background-color:rgba(51,62,71,0.85);}
+.page-signup form .form-group p.help-block{font-size:.9rem;font-weight:300}
+.page-signup form .alert-sucess{padding:15px;background:rgba(255,255,255,.8)}
+.page-signup form .help-block p{color:red;font-size:.8rem}
+.page-signup form p.text-danger {color:rgba(241,99,68,1);font-size:0.8rem;}
+/** divider */
+.page-signup p.divider {margin-top:-40px;}
+.page-signup p.divider span {display:inline-block;width:70px;height:auto;overflow:hidden;padding:5px 10px;background-color:white;}
+/** facebook login button */
+.page-signup p.btn-facebook-login {}
+.page-signup p.btn-facebook-login a {}
+.page-signup p.btn-facebook-login a:hover {color:rgba(255,255,255,1);}
+.page-signup p.btn-facebook-login a span {display:inline-block;width:100%;border-bottom:3px solid rgba(48,72,123,1);padding:15px;margin:15px 0px;background-color:rgba(58,87,149,1);font-size:0.85rem;border-radius:5px;-ms-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}
+.page-signup p.btn-facebook-login a:hover span {background-color: rgba(48,72,123,1);}
+/** disclosure */
+.page-signup p.disclosure {font-size:0.7rem;padding-bottom:15px;}
+.page-signup p.disclosure a {text-decoration:underline;color:rgba(150,155,158,1);}
+.page-signup p.disclosure a:hover {color:rgba(44,232,173,1);}
+.page-signup p.login-warning {font-size:0.85rem;}
+.page-signup p.login-warning a:hover {text-decoration:underline;}
+/** password warning */
+.page-signup .passsword-warning {position:absolute;width:100px;height:auto;right:25px;top:62px;background:rgba(255,255,255,1);}
+.page-signup .passsword-warning p {font-size:0.75rem;}
+.page-signup form .form-group.checkbox {margin-bottom:15px;}
+.page-signup form .form-group input[type="checkbox"] {display:none;}
+.page-signup form .form-group input[type="checkbox"] + label {color:rgba(34,45,51,1);text-transform: capitalize;margin-left:0px;}
+.page-signup form .form-group input[type="checkbox"] + label span {display:inline-block;width:15px;height:15px;margin:-1px 5px 0 0;vertical-align:middle;background:transparent;border:1px solid rgba(47,57,63,1);cursor:pointer;border-radius:2px;}
+.page-signup form .form-group input[type="checkbox"]:checked + label span {/*background-color:rgba(47,57,63,1);*/background:transparent;color:rgba(34,45,51,1);}
+.page-signup form .form-group input[type="checkbox"]:checked + label span:before {font-family: "FontAwesome";content: '\f00c';font-size:0.8rem;color:rgba(34,45,51,1);position:absolute;z-index:1;margin-left:-13px;margin-top:-2px;}
+
+
+/** contact form */
+.simform {position: relative;margin: 0 auto;padding: 2em 0;text-align: left;}
+.simform .submit {display: none;}
+/* Question list style */
+.simform ol {margin: 0;padding: 0;list-style: none;position: relative;-webkit-transition: height 0.4s;transition: height 0.4s;}
+.simform ol:before {content: '';position: absolute;left: 0;bottom: 0;width: 100%;height: 2.35em;}
+.questions li {z-index: 100;position: relative;visibility: hidden;height: 0;-webkit-transition: visibility 0s 0.4s, height 0s 0.4s;transition: visibility 0s 0.4s, height 0s 0.4s;}
+.questions li.current, .no-js .questions li {visibility: visible;height: auto;-webkit-transition: none;transition: none;}
+/* Labels */
+.questions li > span {display: block;overflow: hidden;}
+.questions li  span label {color:rgba(0,0,0,1);font-size:1.1rem;font-weight:300;margin-bottom:0px;letter-spacing:1.1px;padding-left:5px;display:none;}
+.questions li > span label {display: block;-webkit-transition: -webkit-transform 0.4s;transition: transform 0.4s;-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+.questions li.current > span label,
+.no-js .questions li > span label {-webkit-transition: none;transition: none;-webkit-transform: translateY(0);transform: translateY(0);}
+.show-next .questions li.current > span label {-webkit-animation: moveUpFromDown 0.4s both;animation: moveUpFromDown 0.4s both;}
+@-webkit-keyframes moveUpFromDown {from { -webkit-transform: translateY(100%); }to { -webkit-transform: translateY(0); }}
+@keyframes moveUpFromDown {from { -webkit-transform: translateY(100%); transform: translateY(100%); }to { -webkit-transform: translateY(0); transform: translateY(0); }}
+/* Input field */
+.questions input {display: block;margin: 0em 0 0 0;/*padding: 0.5em 1em 0.5em 0.7em;*/width: calc(100% - 2em);border: none;background-color: transparent;color: rgba(0,0,0,1);text-align: left;font-size: 0.9rem;line-height: 1;font-weight:300;letter-spacing:1.1px;box-shadow:none;-webkit-transition: opacity 0.3s;transition: opacity 0.3s;}
+.questions .current input,
+.no-js .questions input {opacity: 1;}
+.questions input:focus,
+.simform button:focus {outline: none;background-color: transparent;}
+::-webkit-input-placeholder {color: rgba(120,120,120,1);font-weight:600;font-size:0.75rem;}
+/* Next question button */
+.next {position: absolute;right: 0;bottom: 2rem;display: block;padding: 0px;width: 1em;height: 1em;border: none;background: none;font-size: 22px;color: rgba(0,0,0,0.2);text-align: center;opacity: 0;z-index: 100;cursor: pointer;-webkit-transition: -webkit-transform 0.3s, all 0.3s;transition: transform 0.3s, all 0.3s;-webkit-transform: translateX(-20%);transform: translateX(-20%);pointer-events: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+.next:hover, .next:focus {color: rgba(0,0,0,1);background-color: transparent;}
+.next::after {position: absolute;top: 0;left: 0;width: 100%;height: 100%;text-transform: none;line-height: 1;speak: none;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+.next.show {opacity: 1;-webkit-transform: translateX(0);transform: translateX(0);pointer-events: auto;}
+/* Progress bar */
+.simform .progress {width: 0%;height: 1px;background: rgba(0,0,0,1);-webkit-transition: width 0.4s ease-in-out;transition: width 0.4s ease-in-out;}
+.simform .progress::before {position: absolute;top: auto;width: 100%;height: inherit;background: rgba(0,0,0,0.2);content: '';}
+/* Number indicator */
+.simform .number {position: absolute;right: 0;overflow: hidden;margin: 10px 0;color: #fff;width: 3em;font-weight: 100;font-size: 0.4em;display: none;}
+.simform .number:after {position: absolute;left: 50%;content: '/';opacity: 0.4;-webkit-transform: translateX(-50%);transform: translateX(-50%);}
+.simform .number span {float: right;width: 40%;text-align: center;}
+.simform .number .number-current {float: left;font-weight: 400;}
+.simform .number-next {position: absolute;left: 0;}
+.simform.show-next .number-current {-webkit-transition: -webkit-transform 0.4s;transition: transform 0.4s;-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+.simform.show-next .number-next {-webkit-animation: moveUpFromDown 0.4s both;animation: moveUpFromDown 0.4s both;}
+/* Error and final message */
+.simform .error-message,
+.simform .final-message {position: absolute;visibility: hidden;opacity: 0;-webkit-transition: opacity 0.4s;transition: opacity 0.4s;}
+.simform .error-message {padding: 0.4em 3.5em 0 0;width: 100%;text-align: left;color: rgba(241,99,68,1);font-size: 0.7rem;font-weight: 400;}
+.final-message {color: rgba(0,0,0,1);font-weight: 600;letter-spacing: 1.1px;font-size: 0.75rem;top: 50%;left: 0;padding: 0.5em;width: 100%;text-align: center;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.error-message.show,
+.final-message.show {visibility: visible;opacity: 1;}
+.final-message.show {-webkit-transition-delay: 0.5s;transition-delay: 0.5s;}
+/* Final hiding of form / showing message */
+.simform-inner.hide {visibility: hidden;opacity: 0;-webkit-transition: opacity 0.3s, visibility 0s 0.3s;transition: opacity 0.3s, visibility 0s 0.3s;}
+/* No JS Fallback */
+.no-js .simform {font-size: 1em;}
+.no-js .questions li {padding: 0 0 2em;}
+.no-js .simform .submit {display: block;float: right;padding: 10px 20px;border: none;background: rgba(0,0,0,0.3);color: rgba(0,0,0,0.4);}
+.no-js .simform .controls {display: none;}
+/* Remove IE clear cross */
+input[type=text]::-ms-clear {display: none;}
+
+/*------------------------------------*\
+    MEDIA QUERIES
+\*------------------------------------*/
+@media only screen {} /* Define mobile styles */
+@media only screen and (max-width: 28em) {}/*** Mobile Fixes ***/
+@media only screen and (max-width: 40em) {}/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (min-width: 40.063em) {}/* min-width 641px, medium screens */ 
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {}/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (max-width:64em) {}/* max width 1024px */
+@media only screen and (min-width: 64.063em) {}/* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {} /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {} /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xlarge screens */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {}

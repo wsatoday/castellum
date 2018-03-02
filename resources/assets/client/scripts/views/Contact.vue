@@ -29,10 +29,15 @@
 
 			}
 		},
+		metaInfo () {
+			return {
+				title: 'Contactos | Castellum - Asset Management, Engineering &amp; Consulting.'
+			}
+		},
 		mounted() {
 			let _this = this;
 			_this.init();
-			google.maps.event.addDomListener(window, 'load', _this.renderMap('38.775851', '-9.1532448'));
+			google.maps.event.addDomListener(window, 'load', _this.renderMap('38.7760239', '-9.1528713'));
 		},
 		methods: {
 			removeLoader() {
@@ -47,62 +52,217 @@
 			renderMap(thisLat, thisLong) {
 				let _this = this;
 				var styles = [{
-		            featureType: 'road',
-		            elementType: 'geometry',
-		            stylers: [{
-		                visibility: 'simplified'
-		            }, {
-		                color: '#CCC'
-		            }]
-		        }, {
-		            featureType: 'landscape',
-		            elementType: 'geometry',
-		            stylers: [{
-		                    visibility: 'simplified'
-		                }, {
-		                    //color: '#CCC'
-		                }
-
-		            ]
-		        }, {
-		            featureType: 'road',
-		            elementType: 'labels',
-		            stylers: [{
-		                //visibility: 'off'
-		            }]
-		        }, {
-		            featureType: 'poi',
-		            stylers: [{
-		               // visibility: 'off'
-		            }]
-		        }, {
-		            featureType: 'transit',
-		            stylers: [{
-		                //visibility: 'off'
-		            }]
-		        }, {
-		            featureType: 'administrative',
-		            stylers: [{
-		                visibility: 'off'
-		            }]
-		        }, {
-		            featureType: 'water',
-		            elementType: "geometry",
-		            stylers: [{
-		                invert_lightness: true
-		            }, {
-		                hue: "#ff003b"
-		            }, {
-		                saturation: -100
-		            }, {
-		                lightness: 100
-		            }]
-		        }];
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#bcc4c9" //#f5f5f5
+				      }
+				    ]
+				  },
+				  {
+				    "elementType": "labels.icon",
+				    "stylers": [
+				      {
+				        "visibility": "off"
+				      }
+				    ]
+				  },
+				  {
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#616161"
+				      }
+				    ]
+				  },
+				  {
+				    "elementType": "labels.text.stroke",
+				    "stylers": [
+				      {
+				        "color": "#bcc4c9" //#f5f5f5
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "administrative.land_parcel",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#bdbdbd"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				      	 "visibility": "off",
+				        "color": "#eeeeee"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi",
+				    "elementType": "labels.text",
+				    "stylers": [
+				      {
+				        "visibility": "off"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				      	 "visibility": "off",
+				        "color": "#757575"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi.business",
+				    "stylers": [
+				      {
+				        "visibility": "off"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi.park",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				      	"visibility": "off",
+				        "color": "#e5e5e5"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi.park",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				      	"visibility": "off",
+				        "color": "#9e9e9e"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#cccecf"//#ffffff
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road",
+				    "elementType": "labels.icon",
+				    "stylers": [
+				      {
+				        "visibility": "off"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.arterial",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#b3bbc0" //#757575
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.arterial",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#757575" //#757575
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.highway",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#b3bbc0"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.highway",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#616161"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.local",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#9e9e9e"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "transit",
+				    "stylers": [
+				      {
+				        "visibility": "off"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "transit.line",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				      	 "visibility": "off",
+				        "color": "#e5e5e5"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "transit.station",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				      	 "visibility": "off",
+				        "color": "#eeeeee"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "water",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#c9c9c9"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "water",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#9e9e9e"
+				      }
+				    ]
+				  }];
 
 				var styledMap = new google.maps.StyledMapType(styles,{name:'map'});
 				var mapOptions = {
 					center: new google.maps.LatLng(thisLat,thisLong),
-					zoom:13,
+					zoom:16,
 					scrollwheel:false,
 					draggable: true,
 					disableDefaultUI:true,

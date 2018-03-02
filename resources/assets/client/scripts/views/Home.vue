@@ -2,8 +2,10 @@
 	<div class="home">
 		<section class="block block--full-page block--banner">
 			<div class="block__overlay">
-				<h2 class="block__title">Castellum</h2>
-				<h1 class="block__subtitle">Asset Management, Engineering &amp; Consulting</h1>
+				<h2 class="block__title block__title-img-wrapper">
+					<img src="/client/images/logo-castellum.png" alt="Castellum">
+				</h2>
+				<h1 class="block__subtitle">Asset Management, Engineering &amp; Consulting.</h1>
 			</div>
 		</section>
 		<span class="scroll-arrow-arrow" @click="scrollDown" data-anchor="js-block--about">
@@ -32,14 +34,14 @@
 			</div>
 			<div class="block no-padding-top no-padding-bottom block--projects__slider" id="js-projects__slider">
 			    <div class="swiper-wrapper">
-			        <div class="swiper-slide slide-1" v-for="(item, index) in items" :key="item.id" :style="'background:url(/client/images/'+ item.cover_photo + ')no-repeat center center / cover'">
+			        <div class="swiper-slide slide-1" v-for="(item, index) in items" :key="item.id" :style="'background:url(/uploads/images/projects/'+ item.cover_photo + ')no-repeat center center / cover'">
 			        	<div class="slide__overlay">
 			        		<div class="small-12 small-centered large-10 large-centered columns">
 			        			<h3 class="slide__title" v-text="item.title"></h3>
 			        			<p class="slide__meta" v-text="item.meta"></p>
 			        		</div>
 			        	</div>
-			        	<router-link class="plus" exact :to="'/portfolio/recent/' + item.slug">
+			        	<router-link class="plus" exact :to="'/portfolio/featured/' + item.slug">
 	        				<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 	        					<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
 	        					<path d="M0 0h24v24H0z" fill="none"/>
@@ -71,7 +73,11 @@
 				items: []
 			}
 		},
-
+		metaInfo () {
+			return {
+				title: 'Castellum - Asset Management, Engineering &amp; Consulting.'
+			}
+		},
 		mounted() {
 			let _this = this;
 			_this.fetchData();
@@ -89,7 +95,7 @@
 			},
 			fetchData() {
 				let _this = this;
-				axios.get('/api/projects/categories/recent.json').then((response) => {
+				axios.get('/api/projects/categories/featured').then((response) => {
 					for(var i = 0; i < response.data.length; i++) {
 			  			_this.items.push(response.data[i]);
 			  		}

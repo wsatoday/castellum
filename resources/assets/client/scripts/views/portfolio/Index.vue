@@ -43,7 +43,7 @@
 				    </rect>
 			  	</svg>
 			</div> 
-			<div v-else class="project" v-for="(item, index) in items" :key="item.id" :style="'background:url(/client/images/'+ item.cover_photo + ')no-repeat center center / cover'">
+			<div v-else class="project" v-for="(item, index) in items" :key="item.id" :style="'background:url(/uploads/images/projects/'+ item.cover_photo + ')no-repeat center center / cover'">
 				<router-link class="project__overlay" exact :to="'/portfolio/' + category + '/' + item.slug">
 					<div class="small-12 small-centered large-10 large-centered columns">
 						<h3 class="project__title" v-text="item.title"></h3>
@@ -73,6 +73,11 @@
 				isCatActive		: undefined
 			}
 		},
+		metaInfo () {
+			return {
+				title: 'Portfolio | Castellum - Asset Management, Engineering &amp; Consulting.'
+			}
+		},
 		mounted() {
 			this.loadData();
 		},	
@@ -94,7 +99,7 @@
 			},
 			fetchData() {
 				let _this = this;
-				axios.get('/api/projects/categories/' + _this.category + '.json' + '?page=' + _this.page).then((response) => {
+				axios.get('/api/projects/categories/' + _this.category + '?page=' + _this.page).then((response) => {
 					_this.page += 1;
 					for(var i = 0; i < response.data.length; i++) {
 			  			_this.items.push(response.data[i]);

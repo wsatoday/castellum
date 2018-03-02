@@ -5,8 +5,8 @@
 				<div class="main-logo">
 					<router-link class="" exact :to="'/'">
 						<picture>
-						  	<source media="(min-width: 64rem)" srcset="/client/images/main-logo-100x100.png, /client/images/main-logo-100x100.png 2x">
-						  	<img src="/client/images/main-logo-50x50.png" srcset="/client/images/main-logo-100x100.png 2x" alt="Castellum">
+						  	<source media="(min-width: 64rem)" srcset="/client/images/main-logo-70x70.png, /client/images/main-logo-100x100.png 2x">
+						  	<img src="/client/images/main-logo-50x50.png" srcset="/client/images/main-logo-70x70.png 2x" alt="Castellum">
 						</picture>
 					</router-link>
 				</div>

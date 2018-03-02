@@ -4,23 +4,20 @@
 			<div class="block__overlay">
 			</div>
 		</section>
-		<div class="small-12 small-centered medium-10 medium-centered columns">
-			<section class="block block--intro" id="js-block--intro">
-				<p class="block__meta">Perfil</p>
-				<h2 class="block__title">Castellum é uma empresa de gestão de<br> activos, engenharia e consultoria.</h2>
-				<p class="block__desc">Castellum é uma marca que tem uma acção de mercado nas áreas da construção, consultoria, fiscalização, desenvolvimento de projecto e gestão de activos imobiliários, numa vertente de High-End organizacional.</p>
-				<p class="block__desc">Erguida sobre vetores de experiência, confiança e segurança, o Castellum desempenha um papel de resolução de necessidades, congregação de esforços e vontades, controlo de processos-chave e desencadeamento de operações numa perspectiva top-to-bottom.</p>
-			</section>
-		</div>
+		<section class="block-intro-wrapper">
+			<div class="small-12 small-centered medium-10 medium-centered columns">
+				<section class="block block--intro" id="js-block--intro">
+					<p class="block__meta">Perfil</p>
+					<h2 class="block__title">Castellum é uma empresa de gestão de<br> activos, engenharia e consultoria.</h2>
+					<p class="block__desc">Castellum é uma marca que tem uma acção de mercado nas áreas da construção, consultoria, fiscalização, desenvolvimento de projecto e gestão de activos imobiliários, numa vertente de High-End organizacional.</p>
+					<p class="block__desc">Erguida sobre vetores de experiência, confiança e segurança, o Castellum desempenha um papel de resolução de necessidades, congregação de esforços e vontades, controlo de processos-chave e desencadeamento de operações numa perspectiva top-to-bottom.</p>
+				</section>
+			</div>
+		</section>
 		<section class="block block--full-page block--team">
 			<div class="block no-padding-top no-padding-bottom block--team__slider" id="js-block--team__slider">
 				<div class="slider__content swiper-wrapper">
 					<div class="swiper-slide slide-1">
-						<p class="block__meta">Director Geral</p>
-						<h2 class="block__title">Marcos Correia</h2>
-						<p class="block__desc">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, orem ipsum dolor sit amet lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</p>
-					</div>
-					<div class="swiper-slide slide-2">
 						<p class="block__meta">Director Geral</p>
 						<h2 class="block__title">Marcos Correia</h2>
 						<p class="block__desc">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, orem ipsum dolor sit amet lorem ipsum dolor sit amet, lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</p>
@@ -55,7 +52,11 @@
 
 			}
 		},
-
+		metaInfo () {
+			return {
+				title: 'Perfil | Castellum - Asset Management, Engineering &amp; Consulting.'
+			}
+		},
 		mounted() {
 			let _this = this;
 			_this.init();

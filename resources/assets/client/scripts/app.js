@@ -8,11 +8,14 @@ import axios from 'axios';
 
 import NProgress from 'vue-nprogress';
 
+import VueMeta from 'vue-meta'
+
 window.Event = new Vue();
 
 window.axios = axios;
 
 Vue.use(VueRouter);
+Vue.use(VueMeta);
 
 Vue.component('app-header', require('./components/Header.vue'));
 Vue.component('app-footer', require('./components/Footer.vue'));

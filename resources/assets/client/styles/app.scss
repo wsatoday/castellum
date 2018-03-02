@@ -603,10 +603,33 @@ a:focus {
 
 .home .block--banner {
 	height: 90vh;
-	background: url('/client/images/bg-1.jpg')no-repeat center center / cover;
+	background-color: $secundary-color;
+	background: url('/client/images/bg-cover-home.jpg')no-repeat center center / cover;
 	
+	.block__overlay {
+		background-color: rgba(0,0,0,0);
+	}
+
 	@media only screen and (min-width: 64rem) {
 		background-attachment: fixed;
+	}
+
+	@media only screen and (min-width: 90.063em) {
+		//background: url('/client/images/bg-cover-home-2x.jpg')no-repeat center center / cover;
+	}
+}
+
+.home .block__title-img-wrapper {
+	margin-bottom: 15px;
+}
+
+.home .block__title-img-wrapper img {
+	width: 200px;
+	margin: 0 auto;
+	@media only screen and (min-width: 64rem) {
+		width: auto;
+		height: auto;
+		max-width: 250px;
 	}
 }
 
@@ -753,15 +776,26 @@ a:focus {
 
 .profile .block--banner {
 	height: 40vh;
-	background: url('/client/images/bg-1.jpg')no-repeat center center / cover;
+	background: url('/client/images/bg-cover-profile.jpg')no-repeat center center / cover;
 	
+	.block__overlay {
+		background-color: rgba(0,0,0,0);
+	}
+
 	@media only screen and (min-width: 64rem) {
 		//background-attachment: fixed;
 	}
 }
 
-.profile .block--intro {
+.profile .block-intro-wrapper {
+	width:100%;
+	height:auto;
+	overflow:hidden;
 	background-color: $primary-light-color;
+	background: url('/client/images/simbolo-castellum.png')no-repeat right bottom;
+}
+
+.profile .block--intro {
 	align-items: left;
 
 	.block__title {
@@ -818,7 +852,7 @@ a:focus {
 	@media only screen and (min-width: 64rem) {
 		align-items: flex-end;
 		padding-right: 5%;
-		background: url('/client/images/bg-1.jpg')no-repeat center center / cover;
+		background: url('/client/images/foto-perfil.jpg')no-repeat center center / cover;
 	}
 }
 
@@ -1028,7 +1062,11 @@ a:focus {
 
 .portfolio .block--banner {
 	height: 40vh;
-	background: url('/client/images/bg-1.jpg')no-repeat center center / cover;
+	background: url('/client/images/bg-cover-profile.jpg')no-repeat center center / cover;
+	
+	.block__overlay {
+		background-color: rgba(0,0,0,0);
+	}
 	
 	@media only screen and (min-width: 64rem) {
 		//background-attachment: fixed;
@@ -1211,7 +1249,7 @@ a:focus {
 
 		.project__overlay {
 			transition: all 0.3s ease-in-out;
-			background-color: rgba(0,0,0,0.5);
+			background-color: rgba(0,0,0,0.3);
 		}
 
 		.project__title {
@@ -1265,11 +1303,12 @@ a:focus {
 .project-page .block--banner {
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: cover;
 
 	.block__overlay {
 		justify-content: space-around;
 
-		background-color: rgba(0,0,0,0.5);
+		background-color: rgba(0,0,0,0.3);
 	}
 	
 	@media only screen and (min-width: 64rem) {
@@ -1562,6 +1601,7 @@ a:focus {
 	@media only screen and (min-width: 64rem) {
 		flex-flow: row-reverse wrap;
 		align-items: flex-start;
+		justify-content: left;
 
 		.project-headline,
 		.project-thumb {
